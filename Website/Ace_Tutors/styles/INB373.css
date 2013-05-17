@@ -1,0 +1,456 @@
+html
+{
+    height: 100%;
+    margin: 0;
+}
+
+body
+{
+    background-color: #CDE695;
+    font: 16px Arial, Helvetica, Sans-Serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+/*
+---------------------------------------
+2. main border styles
+---------------------------------------
+*/
+
+#main_border
+{
+    padding: 0;
+    text-align: left;
+    min-width: 600px;
+    min-height: 100%;
+    position: relative;
+}
+
+/*
+---------------------------------------
+3. header styles
+---------------------------------------
+*/
+
+#header_banner
+{
+    background: #ffffff url(..styles/images/header_background_adv.png) repeat-x;
+    height: 180px;
+    padding-left: 5px;
+}
+
+#header_content
+{
+    padding: 20px 0 0 0;
+    margin: 0 auto 0 auto;
+    min-width: 600px;
+    max-width: 980px;
+    height: 127px;
+}
+
+/*
+---------------------------------------
+4. navigation styles
+---------------------------------------
+*/
+
+#navigation
+{
+    margin: 0 auto 0 auto;
+    min-width: 600px;
+    /*max-width: 980px;*/
+    height: 30px;
+}
+
+#navigation ul
+{
+    margin: 7px 0 0 0;
+    padding: 0;
+}
+
+#navigation ul li
+{
+    position: relative;
+    display: inline;
+    background-color: #7FB24C;
+    padding: 7px;
+}
+
+#navigation ul li:hover
+{
+    background-color: #336600;
+}
+
+#navigation ul #selected_button
+{
+    background-color: #F1F7D4;
+}
+
+#navigation ul #selected_button a
+{
+    color: #336600;
+}
+
+#navigation ul li a
+{
+    color: #FFFFFF;
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 10px 3px 0 3px;
+    text-align: center;
+}
+
+/*
+---------------------------------------
+5. content styles / asp control styles
+---------------------------------------
+*/
+
+#main_content_container
+{
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 800px;
+    padding-bottom: 100px;
+    padding-left: 5px;
+}
+
+#main_content
+{
+    float: left;
+    width: 60%;
+    padding: 10px 0 10px 0;
+}
+
+.content_border_top_right
+{
+    background: url(../images/borders/border_tr_line.png) no-repeat top right;
+    height: 10px;
+    width: 100%;
+    margin: -1px 0 0 0;
+}
+
+.content_border_bottom_left
+{
+    background: url(../images/borders/border_bl_line.png) no-repeat bottom left;
+    height: 10px;
+    width: 100%;
+    margin: 0 0 -1px 0;
+}
+
+.content_header
+{
+    margin: 0;
+    border-top: #99CC66 solid 0px;
+    border-left: #99CC66 solid 0px;
+}
+
+.content_footer
+{
+    margin: 0 0 10px 0;
+    border-bottom: #99CC66 solid 1px;
+    border-right: #99CC66 solid 1px;
+}
+
+.content
+{
+    padding: 5px 15px 5px 15px;
+    border-left: #94D347 solid 1px;
+    border-right: #94D347 solid 1px;
+    border-top:  #94D347 solid 1px;
+    border-bottom:  #94D347 solid 1px;
+}
+
+.content h1
+{
+    color: #336600;
+    font-size: 15pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+.content h2
+{
+    color: #7FB24C;
+    font-size: 12pt;
+    font-weight: bold;
+    display: inline;
+    padding: 0 5px 0 0;
+}
+
+.content h3
+{
+    color: #336600;
+    font-size: 1.05em;
+    font-weight: bold;
+    display: inline;
+}
+
+.content_subtitle
+{
+	color: #7FB24C;
+    font-size: 12pt;
+    font-weight: bold;
+    display: inline;
+    padding: 0 5px 0 0;
+}
+
+.content img
+{
+    float: left;
+    padding: 10px 10px 5px 0;
+}
+
+.content ul li
+{
+	font-size: 1.05em;
+}
+
+.content_main_image
+{
+	width: 100%;
+}
+
+.content_float_buffer
+{
+    clear: both;
+}
+
+.left_content
+{
+    float: left;
+}
+
+.left_content img
+{
+    padding: 0 10px 0 0;
+}
+
+.subsection_content
+{
+    font-size: 1.05em;
+    padding: 5px 0 10px 0;
+    clear: left;
+}
+
+.message_box
+{
+	margin: 2px 0 10px 0;
+    background-color: #99CC66;
+    text-align: center;
+    font-weight: bold;
+	font-size: 1.2em;
+	color: #336600;
+}
+
+.curved_border_top_left_grey
+{
+    background: url(../images/borders/border_tl_grey.png) no-repeat top left;
+    height: 10px;
+    width: 100%;
+}
+
+.curved_border_bottom_right_grey
+{
+    background: url(../images/borders/border_br_grey.png) no-repeat bottom right;
+    height: 10px;
+    width: 100%;
+}
+
+
+.BtnStyle /** this adjusts/ styles all asp controls button for mainmenu **/
+{       
+   height: 104px;
+   width:200px
+}
+
+.labelstyle {
+ width: 130px; /** 110 is optimal **/
+ float: left;
+ text-align: left;
+ margin-right: 0.5em;
+ display: block;
+    margin-bottom: 0px;
+}
+ 
+ .submitstyle {
+     height: 50px;
+     width: 100px;
+     margin-left: 250px;
+ }
+ 
+ .listboxstyle {
+     height: 150px;
+     width: 200px;
+ }
+
+.listboxstyle2 {      /* this is the size of listbox being used for the updateclass and teachers page */ 
+    height: 300px;
+    width: 500px;
+}
+/*
+---------------------------------------
+6. sidebar styles
+---------------------------------------
+*/
+
+#sidebar
+{
+    float: right;
+    width: 29%;
+    margin: 10px 5px 15px 5px;
+    padding: 0 0 0 0;
+    background-color: #99CC66;
+    height: 100%;
+    clear: right;
+    min-width: 270px;
+    overflow: auto;
+    overflow: hidden;
+}
+
+#sidebar img
+{
+	float: left;
+	padding: 0 8px 0 0;
+}
+
+.curved_border_top_left
+{
+    background: url(../images/borders/border_tl.png) no-repeat top left;
+    height: 10px;
+    width: 100%;
+}
+
+.curved_border_bottom_right
+{
+    background: url(../images/borders/border_br.png) no-repeat bottom right;
+    height: 10px;
+    width: 100%;
+}
+
+#sidebar_twitter
+{
+    float: right;
+    width: 29%;
+    margin: 5px 5px 5px 5px;
+    padding: 0 0 0 0;
+    background-color: #99CC66;
+    height: 100%;
+    text-align: center;
+    min-width: 270px;
+}
+
+.curved_border_top_left_blue
+{
+    background: url(../images/borders/border_tl_blue.png) no-repeat top left;
+    height: 10px;
+    width: 100%;
+}
+
+.curved_border_bottom_right_blue
+{
+    background: url(../images/borders/border_br_blue.png) no-repeat bottom right;
+    height: 10px;
+    width: 100%;
+}
+
+#sidebar_content
+{
+    margin: 0 5px 0 5px;
+}
+
+#sidebar h1
+{
+    font-weight: bold;
+    color: #336600;
+    margin: 5px 0 2px 0;
+    font-size: 12pt;
+}
+
+#sidebar h2
+{
+	font-weight: bold;
+	color: #336600;
+	margin: 0;
+	font-size: 11pt;
+}
+
+.bold_subtitle
+{
+    color: #000000;
+    font-size: 1.05em;
+    font-weight: bold;
+}
+
+.sidebar_section
+{
+    padding: 5px;
+    background-color: #F1F1F1;
+    border: #CCCCCC solid 1px;
+    border-top: #CCCCCC solid 3px;
+}
+
+.sidebar_section_divider
+{
+    padding-top: 15px;
+}
+
+.sidebar_section a
+{
+    color: #EE4E4E;
+}
+
+.sidebar_section a:hover
+{
+    text-decoration: underline;
+}
+
+/*
+---------------------------------------
+7. footer styles
+---------------------------------------
+*/
+
+#footer_banner
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #FFFFFF url(../images/footer_background_adv.png) repeat-x;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+#footer_content
+{
+    margin: 0 auto 0 auto;
+    height: 100px;
+    min-width: 830px;
+    max-width: 980px;
+    font-size: 10.5pt;
+    font-weight: bold;
+}
+
+#footer_main
+{
+    float: left;
+    width: 66%;
+    height: 80px;
+    color: #336600;
+    padding: 20px 0 0 10px;
+}
+
+#footer_sidebar
+{
+    float: right;
+    width: 27%;
+    height: 80px;
+    color: #336600;
+    text-align: right;
+    padding: 20px 10px 0 0;
+}
