@@ -332,18 +332,6 @@ body
     width: 100%;
 }
 
-#sidebar_twitter
-{
-    float: right;
-    width: 29%;
-    margin: 5px 5px 5px 5px;
-    padding: 0 0 0 0;
-    background-color: #99CC66;
-    height: 100%;
-    text-align: center;
-    min-width: 270px;
-}
-
 .curved_border_top_left_blue
 {
     background: url(../images/borders/border_tl_blue.png) no-repeat top left;

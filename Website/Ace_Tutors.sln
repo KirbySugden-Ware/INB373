@@ -6,30 +6,33 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors(1)", "http://loc
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_16169"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\GitHub\INB373\Website\Ace_Tutors\"
+		Debug.AspNetCompiler.PhysicalPath = "Ace_Tutors\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16169\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_16169"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\GitHub\INB373\Website\Ace_Tutors\"
+		Release.AspNetCompiler.PhysicalPath = "Ace_Tutors\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16169\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\GitHub\INB373\Website\Ace_Tutors\"
+		SlnRelativePath = "Ace_Tutors\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
