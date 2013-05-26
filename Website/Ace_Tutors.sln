@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors(1)", "http://localhost:16169", "{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors", "http://localhost:16169", "{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
@@ -25,6 +25,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors(1)", "http://loc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F29023BA-89D2-4F5B-A95A-C2742EC21185}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
