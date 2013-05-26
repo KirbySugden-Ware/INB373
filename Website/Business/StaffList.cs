@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data;
 
 namespace Business {
-    [System.ComponentModel.DataObject]
+    [System.ComponentModel.DataObject(true)]
     public class StaffList {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Staff> getAllStaff() {

@@ -20,7 +20,6 @@
                     <ContentTemplate>
                         <asp:Button ID="btnTutorInfo" runat="server" Text="View contact details for tutors" OnClick="btnTutorInfo_Click"/>
                         <asp:Button ID="btnTimeTableS" runat="server" Text="View class times" OnClick="btnTimeTableS_Click"/>
-                        <asp:Button ID="btnEnrole" runat="server" Text="Register/deregister from class" OnClick="btnEnrole_Click1"/>
                     </ContentTemplate>
                 </asp:RoleGroup>
             </RoleGroups>

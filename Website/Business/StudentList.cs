@@ -5,11 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Data;
 
-namespace Business
-{
-    [System.ComponentModel.DataObject]
-    public class StudentList
-    {
+namespace Business {
+    [System.ComponentModel.DataObject(true)]
+    public class StudentList {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Student> getAllStudents() {
             List<Student> StudentsList = new List<Student>();

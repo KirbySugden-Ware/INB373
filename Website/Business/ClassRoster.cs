@@ -7,8 +7,8 @@ using Data;
 
 namespace Business {
 
-    [System.ComponentModel.DataObject]
-    class ClassRoster {
+    [System.ComponentModel.DataObject(true)]
+    public class ClassRoster {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<ClassRoster> getAllClassRosters() {
             List<ClassRoster> ClassRostersList = new List<ClassRoster>();

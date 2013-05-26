@@ -5,11 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class _Default : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        
+public partial class _Default : System.Web.UI.Page {
+    protected void Page_Load(object sender, EventArgs e) {
+
     }
     protected void btnClass_Click(object sender, EventArgs e) {
         Response.Redirect("AccessTutor/ClassList.aspx");
@@ -25,8 +23,5 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnTimeTableS_Click(object sender, EventArgs e) {
         Response.Redirect("AccessStudent/Timetable.aspx");
-    }
-    protected void btnEnrole_Click1(object sender, EventArgs e) {
-        Response.Redirect("AccessStudent/SelfEnrole.aspx");
     }
 }

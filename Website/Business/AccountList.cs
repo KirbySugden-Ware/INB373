@@ -8,8 +8,8 @@ using Data;
 
 namespace Business {
 
-    [System.ComponentModel.DataObject]
-    class AccountList {
+    [System.ComponentModel.DataObject(true)]
+    public class AccountList {
 
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<AccountList> getAllAccounts() {

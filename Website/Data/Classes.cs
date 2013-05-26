@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.ComponentModel;
 
 namespace Data {
+    
     public class Student {
+        [System.ComponentModel.DataObjectField(true)]
         private int StudentID { get; set; }
         public string GivenName { get; set; }
         public string Surname { get; set; }
@@ -27,8 +30,9 @@ namespace Data {
 
         }
     }
-
+    
     public class Staff {
+        [System.ComponentModel.DataObjectField(true)]
         private int StaffID { get; set; }
         public string GivenName { get; set; }
         public string Surname { get; set; }
@@ -38,8 +42,9 @@ namespace Data {
         public string Phone2 { get; set; }
         public string Role { get; set; }
     }
-
+    
     public class Class {
+        [System.ComponentModel.DataObjectField(true)]
         public int ClassID { get; set; }
         public string ClassCode { get; set; }
         public string Day { get; set; }

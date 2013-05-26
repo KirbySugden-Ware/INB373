@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 using Data;
 
 namespace Business {
-
-    [System.ComponentModel.DataObject]
-    class ClassList {
-
+    [System.ComponentModel.DataObject(true)]
+    public class ClassList {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Class> getAllClasses() {
             List<Class> classList = new List<Class>();
