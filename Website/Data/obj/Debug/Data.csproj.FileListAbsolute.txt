@@ -11,3 +11,4 @@ C:\Users\Kirby\Desktop\Website\Data\bin\Debug\Data.dll
 C:\Users\Kirby\Desktop\Website\Data\bin\Debug\Data.pdb
 C:\Users\Kirby\Desktop\Website\Data\obj\Debug\Data.dll
 C:\Users\Kirby\Desktop\Website\Data\obj\Debug\Data.pdb
+C:\Users\Kirby\Desktop\Website\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

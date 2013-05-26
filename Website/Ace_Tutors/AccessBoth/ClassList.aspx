@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ClassList.aspx.cs" Inherits="AccessBoth_ClassList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
-
     <asp:LoginView ID="LoginView1" runat="server">
         <RoleGroups>
             <asp:RoleGroup Roles="Tutor">
@@ -20,6 +19,5 @@
             </asp:RoleGroup>
         </RoleGroups>
     </asp:LoginView>
-
 </asp:Content>
 

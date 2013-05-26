@@ -11,7 +11,7 @@
             <RoleGroups>
                 <asp:RoleGroup Roles="Tutor">
                     <ContentTemplate>
-                        <asp:Button ID="btnClass" runat="server" Text="View class list" OnClick="btnClass_Click" />
+                        <asp:Button ID="btnClassT" runat="server" Text="View class list" OnClick="btnClass_Click" />
                         <asp:Button ID="btnTimeTableT" runat="server" Text="View class times" OnClick="btnTimeTable_Click" />
                         <asp:Button ID="btnEnrole" runat="server" Text="Register/deregister students from class" OnClick="btnEnrole_Click" />
                     </ContentTemplate>
@@ -20,6 +20,7 @@
                     <ContentTemplate>
                         <asp:Button ID="btnTutorInfo" runat="server" Text="View contact details for tutors" OnClick="btnTutorInfo_Click"/>
                         <asp:Button ID="btnTimeTableS" runat="server" Text="View class times" OnClick="btnTimeTableS_Click"/>
+                        <asp:Button ID="btnClassS" runat="server" Text="View class list" OnClick="btnClass_Click" />
                     </ContentTemplate>
                 </asp:RoleGroup>
             </RoleGroups>
