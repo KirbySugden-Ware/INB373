@@ -21,10 +21,10 @@
                 <!-- Begin Navigation Bar -->
                 <div id="navigation">
                     <ul>
-                        <li id="selected_button"><a href="Default.aspx">Home</a></li>
-                        <li><a href="ClassGuidelines.aspx">Timetables &amp; Classes</a></li>
-                        <li><a href="Contact.aspx">Contact Us</a></li>
-                        <li><a href="AboutUs.aspx">About Us</a></li>
+                        <li id="selected_button"><a href="../Default.aspx">Home</a></li>
+                        <li><a href="../ClassGuidelines.aspx">Timetables &amp; Classes</a></li>
+                        <li><a href="../Contact.aspx">Contact Us</a></li>
+                        <li><a href="../AboutUs.aspx">About Us</a></li>
 
                         <li id="Li1" runat="server" visible="true">
                             <asp:LoginStatus ID="LoginStatus1" runat="server" />

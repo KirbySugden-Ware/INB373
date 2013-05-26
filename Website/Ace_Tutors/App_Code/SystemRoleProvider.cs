@@ -46,6 +46,8 @@ public class SystemRoleProvider : RoleProvider
     }
 
     public override string[] GetRolesForUser(string username) {
+        //code to get role of user
+        //return user role
         return new string[] { username };
     }
 

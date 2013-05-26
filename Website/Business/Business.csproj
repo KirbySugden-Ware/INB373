@@ -39,12 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts.cs" />
+    <Compile Include="AccountList.cs" />
     <Compile Include="ClassList.cs" />
     <Compile Include="ClassRoster.cs" />
-    <Compile Include="Staff.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="StaffList.cs" />
+    <Compile Include="StudentList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{f29023ba-89d2-4f5b-a95a-c2742ec21185}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
