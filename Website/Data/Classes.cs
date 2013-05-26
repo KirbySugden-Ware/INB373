@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Data
 {
@@ -15,6 +17,16 @@ namespace Data
         public string Email { get; set; }
         public string Phone1 { get; set; }
         public string Phone2 { get; set; }
+
+        public void StudentSearch(int StudentID){
+        //Connect to SQL Server
+        SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+        SqlCommand cmd = new SqlCommand("SELECT * from student where StudentID = " + StudentID, conn);
+        SqlDataReader rdr = cmd.ExecuteReader();
+        while(rdr.Read()){
+            
+        }
+
     }
 
     public class Staff
