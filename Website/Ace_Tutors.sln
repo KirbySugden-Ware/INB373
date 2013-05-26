@@ -23,6 +23,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors(1)", "http://loc
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7188A1-634A-4F5C-97FB-BAA0F7AB9BAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

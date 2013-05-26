@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="LoginMasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta name="Title" content="Ace Tutoring Services" />
+    <meta name="Author" content="Kirby Sugden-Ware, Ben Musgrove" />
+    <title>Ace Tutoring Services</title>
+    <link rel="stylesheet" type="text/css" href="styles/INB373.css" />
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div id="main_border">
+            <!-- Begin Header Section -->
+            <div id="header_banner">
+                <div id="header_content">
+                    <img src="styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" />
+                    <img src="styles/images/Ace_logo1.jpg" alt="Ace banner" style="height: 120px; width: 600px" />
+                    <img src="styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" />
+                </div>
+                <!-- Begin Navigation Bar -->
+                <div id="navigation">
+                    <ul>
+                        <li id="selected_button"><a href="Default.aspx">Home</a></li>
+                        <li><a href="ClassGuidelines.aspx">Timetables &amp; Classes</a></li>
+                        <li><a href="Contact.aspx">Contact Us</a></li>
+                        <li><a href="AboutUs.aspx">About Us</a></li>
+
+                        <li id="Li1" runat="server" visible="true">
+                            <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Navigation Bar -->
+
+            </div>
+            <!-- End Header Section -->
+            <!-- Begin Main Content -->
+            <div id="main_content_container">
+                <div id="main_content">
+                    <div class="message_box">
+                        <div class="curved_border_top_left">
+                        </div>
+                        Running in test mode
+                    <div class="curved_border_bottom_right">
+                    </div>
+                    </div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        <!-- Begin Welcome Message Section -->
+                        <div class="content_header">
+                        </div>
+                        <div class="content">
+                            <h1>Welcome to Ace Tutoring Services</h1>
+                            <p>
+                                Filler text here
+                            </p>
+                            &nbsp;<div class="content_float_buffer">
+                            </div>
+                        </div>
+                        <div class="content_footer">
+                            <div class="content_border_bottom_left">
+                            </div>
+                        </div>
+                    </asp:ContentPlaceHolder>
+                    <!-- End Welcome Message Section -->
+                </div>
+                <!-- End Main Content -->
+                <!-- Begin Sidebar -->
+                <div id="sidebar">
+                    <div class="curved_border_top_left">
+                    </div>
+                    <div id="sidebar2_content">
+                        <h1>Events Coming up</h1>
+                        <h3>Upcoming Events</h3>
+                        <p>
+                            end of sem 2
+                        </p>
+                        <h1>Random stuff here</h1>
+                        <h3>Make sure to do all the assigned readings</h3>
+                        <p>
+                            More filler text
+                        </p>
+                        <h1>Random stuff</h1>
+                        <p>
+                            not sure yet<br />
+                        </p>
+                    </div>
+                    <div class="curved_border_bottom_right">
+                    </div>
+                </div>
+                <!-- End Sidebar -->
+                <div class="content_float_buffer">
+                    <br />
+                </div>
+            </div>
+            <!-- Begin Footer -->
+            <%--<form class="form1" runat="server">--%>
+            <div id="footer_banner">
+                <div id="footer_content">
+                    <div id="footer_main">
+                        Address: 12345 Imaginary Road, 4000<br />
+                        Issues regarding system call: 4357 0669
+                    </div>
+                </div>
+            </div>
+            <%--</form>--%>
+            <!-- End Footer -->
+        </div>
+        <%--</form>--%>
+    </form>
+</body>
+</html>

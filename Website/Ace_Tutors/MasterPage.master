@@ -14,9 +14,9 @@
             <!-- Begin Header Section -->
             <div id="header_banner">
                 <div id="header_content">
-                    <img src="styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" /><img src="styles/images/Ace_logo1.jpg"
-                        alt="Ace banner" style="height: 120px; width: 600px" />
-                    <img src="styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" />
+                    <img src="../styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" />
+                    <img src="../styles/images/Ace_logo1.jpg" alt="Ace banner" style="height: 120px; width: 600px" />
+                    <img src="../styles/images/Ace_logo.jpg" alt="logo" style="height: 120px; width: 115px" />
                 </div>
                 <!-- Begin Navigation Bar -->
                 <div id="navigation">
