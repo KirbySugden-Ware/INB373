@@ -4,3 +4,9 @@ C:\Users\Kirby\Documents\GitHub\INB373\Website\DataAccess\bin\Debug\DataAccess.p
 C:\Users\Kirby\Documents\GitHub\INB373\Website\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Kirby\Documents\GitHub\INB373\Website\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Kirby\Documents\GitHub\INB373\Website\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\DataAccess\obj\Debug\DataAccess.pdb

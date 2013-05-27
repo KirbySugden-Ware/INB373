@@ -5,6 +5,8 @@
     <AnonymousTemplate>
         Welcome to our site!  If you are a current student or staff member, please log in to access your options.<br />
         If not, feel free to take a look around and contact us if you are interesting in enroling or becoming a tutor!
+        <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Test.aspx">HyperLink</asp:HyperLink>
     </AnonymousTemplate>
     <LoggedInTemplate>
         Welcome to Ace Tutors, what would you like to do?<br />

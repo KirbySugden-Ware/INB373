@@ -12,3 +12,12 @@ C:\Users\Kirby\Desktop\Website\Business\obj\Debug\Business.dll
 C:\Users\Kirby\Desktop\Website\Business\obj\Debug\Business.pdb
 C:\Users\Kirby\Desktop\Website\Business\bin\Debug\DataAccess.dll
 C:\Users\Kirby\Desktop\Website\Business\bin\Debug\DataAccess.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\Business.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\Business.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\Data.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\DataAccess.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\DataAccess.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\bin\Debug\Data.pdb
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\obj\Debug\Business.dll
+C:\Users\Kirby\Desktop\Ace_Tutors\Business\obj\Debug\Business.pdb

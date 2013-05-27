@@ -49,14 +49,7 @@ public class SystemRoleProvider : RoleProvider
 
     public override string[] GetRolesForUser(string username) {
         //code to get role of user
-        Student thisStudent = new Student();
-        Staff thisTutor = new Staff();
-        thisStudent.StudentSearch(int.Parse(username));
-        if (thisStudent.GivenName != null) {
-            return new string[] { "Student" };
-        } else if (thisTutor.Role != null) {
-            return new string[] { "Tutor" };
-        }
+        
         //return user role
         return new string[] { username };
     }
@@ -66,7 +59,7 @@ public class SystemRoleProvider : RoleProvider
     }
 
     public override bool IsUserInRole(string username, string roleName) {
-        throw new NotImplementedException();
+        return (roleName == GetRolesForUser(username)[0]);
     }
 
     public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames) {

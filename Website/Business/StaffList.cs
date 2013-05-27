@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data;
+using System.Data.SqlClient;
 
 namespace Business {
     [System.ComponentModel.DataObject(true)]
@@ -11,14 +12,27 @@ namespace Business {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Staff> getAllStaff() {
             List<Staff> StaffsList = new List<Staff>();
-            Staff sally = new Staff();
-            sally.Address = "123 happy st";
-            sally.Email = "e@mail.com";
-            sally.GivenName = "sally";
-            sally.Surname = "Staff";
-            sally.Phone1 = "12345678";
-            sally.Phone2 = "1234567890";
-            StaffsList.Add(sally);
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+            //Select all columns for a given StaffID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT dbo.Staff.GivenName, dbo.Staff.Surname, dbo.Staff.Email, dbo.Staff.PhoneNumber1, dbo.Staff.PhoneNumber2, dbo.Staff.Role, dbo.Accounts.PassHash FROM dbo.Staff INNER JOIN dbo.Accounts ON dbo.Staff.StaffID = dbo.Accounts.AccID)", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read()) {
+                StaffsList.Add(new Staff{
+                GivenName = rdr[0].ToString(),
+                Surname = rdr[1].ToString(),
+                Address = rdr[2].ToString(),
+                Email = rdr[3].ToString(),
+                Phone1 = rdr[4].ToString(),
+                Phone2 = rdr[5].ToString(),
+                Role = rdr[6].ToString(),
+                PassHash = rdr[7].ToString()});
+            }
+            //Close the reader and the SQL connection
+            if (rdr != null) {
+                rdr.Close();
+            }
+            conn.Close();
             return StaffsList;
         }
 
@@ -38,6 +52,10 @@ namespace Business {
         public static void updateStaff(Staff staff) {
 
             System.Diagnostics.Trace.WriteLine(staff, "Update");
+        }
+
+        public static Staff getAStaff(int userId) {
+            return new Staff(userId);
         }
     }
 }
