@@ -11,7 +11,14 @@ namespace Business {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Student> getAllStudents() {
             List<Student> StudentsList = new List<Student>();
-
+            Student pete = new Student();
+            pete.Address = "123 happy st";
+            pete.Email = "e@mail.com";
+            pete.GivenName = "Pete";
+            pete.Surname = "Student";
+            pete.Phone1 = "12345678";
+            pete.Phone2 = "1234567890";
+            StudentsList.Add(pete);
             return StudentsList;
         }
 

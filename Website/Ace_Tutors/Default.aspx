@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <asp:LoginView ID="LoginView1" runat="server">
     <AnonymousTemplate>
-        Please log in
+        Welcome to our site!  If you are a current student or staff member, please log in to access your options.<br />
+        If not, feel free to take a look around and contact us if you are interesting in enroling or becoming a tutor!
     </AnonymousTemplate>
     <LoggedInTemplate>
         Welcome to Ace Tutors, what would you like to do?<br />

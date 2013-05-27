@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using Business;
+using Data;
 
 /// <summary>
 /// Summary description for SystemRoleProvider
@@ -47,6 +49,14 @@ public class SystemRoleProvider : RoleProvider
 
     public override string[] GetRolesForUser(string username) {
         //code to get role of user
+        Student thisStudent = new Student();
+        Staff thisTutor = new Staff();
+        thisStudent.StudentSearch(int.Parse(username));
+        if (thisStudent.GivenName != null) {
+            return new string[] { "Student" };
+        } else if (thisTutor.Role != null) {
+            return new string[] { "Tutor" };
+        }
         //return user role
         return new string[] { username };
     }
