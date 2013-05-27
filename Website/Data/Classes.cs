@@ -17,7 +17,7 @@ namespace Data {
         public string Phone2 { get; set; }
         public string PassHash { get; set; }
 
-//<<<<<<< HEAD
+        //<<<<<<< HEAD
         public void StudentSearch(int StudentID) {
             //Connect to SQL Server
             SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
@@ -29,9 +29,8 @@ namespace Data {
             }
         }
 
-//=======
-        public Student()
-        {
+        //=======
+        public Student() {
             GivenName = "";
             Surname = "";
             Address = "";
@@ -40,16 +39,15 @@ namespace Data {
             Phone2 = "";
 
         }
-        
-        public Student(int StudentID){
-        //Connect to SQL Server
-        SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-        conn.Open();
-        //Select all columns for a given StudentID as well as their password hash
-        SqlCommand cmd = new SqlCommand("SELECT dbo.Students.GivenName, dbo.Students.Surname, dbo.Students.Address, dbo.Students.Email, dbo.Students.PhoneNumber1, dbo.Students.PhoneNumber2, dbo.Accounts.PassHash FROM dbo.Students INNER JOIN dbo.Accounts ON dbo.Students.StudentID = dbo.Accounts.AccID where (dbo.Accounts.AccID = " + StudentID + ")" , conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        while (rdr.Read())
-            {
+
+        public Student(int StudentID) {
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            conn.Open();
+            //Select all columns for a given StudentID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT dbo.Students.GivenName, dbo.Students.Surname, dbo.Students.Address, dbo.Students.Email, dbo.Students.PhoneNumber1, dbo.Students.PhoneNumber2, dbo.Accounts.PassHash FROM dbo.Students INNER JOIN dbo.Accounts ON dbo.Students.StudentID = dbo.Accounts.AccID where (dbo.Accounts.AccID = " + StudentID + ")", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read()) {
                 //Fill out class variables with returned data...
                 GivenName = rdr[0].ToString();
                 Surname = rdr[1].ToString();
@@ -59,13 +57,12 @@ namespace Data {
                 Phone2 = rdr[5].ToString();
                 PassHash = rdr[6].ToString();
             }
-        //Close the reader and the SQL connection
-        if (rdr != null)
-            {
+            //Close the reader and the SQL connection
+            if (rdr != null) {
                 rdr.Close();
             }
-        conn.Close();
-//>>>>>>> Added Constructors for Data Classes
+            conn.Close();
+            //>>>>>>> Added Constructors for Data Classes
         }
     }
 
@@ -80,8 +77,7 @@ namespace Data {
         public string Role { get; set; }
         public string PassHash { get; set; }
 
-        public Staff()
-        {
+        public Staff() {
             GivenName = "";
             Surname = "";
             Address = "";
@@ -90,16 +86,15 @@ namespace Data {
             Phone2 = "";
             Role = "";
         }
-        
-        public Staff(int StaffID){
-        //Connect to SQL Server
-        SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-        conn.Open();
-        //Select all columns for a given StaffID as well as their password hash
-        SqlCommand cmd = new SqlCommand("SELECT dbo.Staff.GivenName, dbo.Staff.Surname, dbo.Staff.Email, dbo.Staff.PhoneNumber1, dbo.Staff.PhoneNumber2, dbo.Staff.Role, dbo.Accounts.PassHash FROM dbo.Staff INNER JOIN dbo.Accounts ON dbo.Staff.StaffID = dbo.Accounts.AccID WHERE (StaffID = " + StaffID + ")" , conn);
-        SqlDataReader rdr = cmd.ExecuteReader();
-        while (rdr.Read())
-            {
+
+        public Staff(int StaffID) {
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            conn.Open();
+            //Select all columns for a given StaffID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT dbo.Staff.GivenName, dbo.Staff.Surname, dbo.Staff.Email, dbo.Staff.PhoneNumber1, dbo.Staff.PhoneNumber2, dbo.Staff.Role, dbo.Accounts.PassHash FROM dbo.Staff INNER JOIN dbo.Accounts ON dbo.Staff.StaffID = dbo.Accounts.AccID WHERE (StaffID = " + StaffID + ")", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read()) {
                 //Fill out class variables with returned data...
                 GivenName = rdr[0].ToString();
                 Surname = rdr[1].ToString();
@@ -109,44 +104,40 @@ namespace Data {
                 Role = rdr[5].ToString();
                 PassHash = rdr[6].ToString();
             }
-        //Close the reader and the SQL connection
-        if (rdr != null)
-            {
+            //Close the reader and the SQL connection
+            if (rdr != null) {
                 rdr.Close();
             }
-        conn.Close();
+            conn.Close();
         }
 
-       public List<Student> StudentList(int StaffID)
-            {   
-                List<Student> Roster = new List<Student>();
+        public List<Student> StudentList(int StaffID) {
+            List<Student> Roster = new List<Student>();
 
-                //Connect to SQL Server
-                SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-                conn.Open();
-                //Select all distinct Student ID's that occur in a specified Tutors classes
-                SqlCommand cmd = new SqlCommand("SELECT Distinct StudentID FROM [WebDevelopmentDB].[dbo].[ClassRoster] where ClassID in (Select ClassID from[WebDevelopmentDB].[dbo].ClassList where TutorID = " + StaffID + ")",conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                string StudentID;     
-                while(rdr.NextResult()){
-                    StudentID = rdr[0].ToString();
-                    Student tmp = new Student(Convert.ToInt32(StudentID));
-                    Roster.Add(tmp);
-                }
-                //Close the reader and the SQL connection
-                if (rdr != null)
-                {
-                   rdr.Close();
-                }
-                conn.Close();
-                return Roster;
-              
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            conn.Open();
+            //Select all distinct Student ID's that occur in a specified Tutors classes
+            SqlCommand cmd = new SqlCommand("SELECT Distinct StudentID FROM [WebDevelopmentDB].[dbo].[ClassRoster] where ClassID in (Select ClassID from[WebDevelopmentDB].[dbo].ClassList where TutorID = " + StaffID + ")", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            string StudentID;
+            while (rdr.NextResult()) {
+                StudentID = rdr[0].ToString();
+                Student tmp = new Student(Convert.ToInt32(StudentID));
+                Roster.Add(tmp);
             }
+            //Close the reader and the SQL connection
+            if (rdr != null) {
+                rdr.Close();
+            }
+            conn.Close();
+            return Roster;
+
         }
+    }
 
 
-    public class Class
-    {
+    public class Class {
         public int ClassID { get; set; }
         public string ClassCode { get; set; }
         public string Day { get; set; }
@@ -154,8 +145,7 @@ namespace Data {
         public string Semester { get; set; }
         public string TutorID { get; set; }
 
-        public Class()
-        {
+        public Class() {
             ClassCode = "";
             Day = "";
             Time = "";
@@ -163,16 +153,14 @@ namespace Data {
             TutorID = "";
         }
 
-        public Class(int ClassID)
-        {
+        public Class(int ClassID) {
             //Connect to SQL Server
             SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
             conn.Open();
             //Select all columns for a given StaffID as well as their password hash
             SqlCommand cmd = new SqlCommand("SELECT ClassCode, Day, Time, Semester, TutorID FROM dbo.ClassList where ClassID = " + ClassID + ")", conn);
             SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
+            while (rdr.Read()) {
                 //Fill out class variables with returned data...
                 ClassCode = rdr[0].ToString();
                 Day = rdr[1].ToString();
@@ -181,15 +169,14 @@ namespace Data {
                 TutorID = rdr[4].ToString();
             }
             //Close the reader and the SQL connection
-            if (rdr != null)
-            {
+            if (rdr != null) {
                 rdr.Close();
             }
             conn.Close();
         }
 
     }
-<<<<<<< HEAD
+    //<<<<<<< HEAD
 
     public class ClassRoster {
         public string[,] Roster { get; set; }
@@ -213,13 +200,12 @@ namespace Data {
             conn.Close();
 
         }
-=======
+        //=======
 
-        public class ClassRoster{
-                public string[,] Roster { get; set; }
+        public class ClassRoster {
+            public string[,] Roster { get; set; }
 
-            public ClassRoster()
-            {
+            public ClassRoster() {
                 //Connect to SQL Server
                 SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
                 conn.Open();
@@ -228,19 +214,18 @@ namespace Data {
                 SqlDataReader rdr = cmd.ExecuteReader();
                 Roster.Initialize();
                 int i = 0;
-                while (rdr.NextResult()){
-                    Roster[i,0] = rdr[0].ToString();
-                    Roster[i,1] = rdr[1].ToString();
+                while (rdr.NextResult()) {
+                    Roster[i, 0] = rdr[0].ToString();
+                    Roster[i, 1] = rdr[1].ToString();
                     i++;
-                }   if (rdr != null)
-                        {
-                        rdr.Close();
-                        }
+                } if (rdr != null) {
+                    rdr.Close();
+                }
                 conn.Close();
-    
+
             }
 
-            public ClassRoster(int StudentID){
+            public ClassRoster(int StudentID) {
                 //Connect to SQL Server
                 SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
                 conn.Open();
@@ -249,38 +234,37 @@ namespace Data {
                 SqlDataReader rdr = cmd.ExecuteReader();
                 Roster.Initialize();
                 int i = 0;
-                while (rdr.NextResult()){
-                    Roster[i,0] = rdr[0].ToString();
-                    Roster[i,1] = rdr[1].ToString();
+                while (rdr.NextResult()) {
+                    Roster[i, 0] = rdr[0].ToString();
+                    Roster[i, 1] = rdr[1].ToString();
                     i++;
-                }   if (rdr != null)
-                        {
-                        rdr.Close();
-                        }
+                } if (rdr != null) {
+                    rdr.Close();
+                }
                 conn.Close();
-    
-            }
->>>>>>> Updated Staff Class
 
-        public ClassRoster(int StudentID) {
-            //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-            conn.Open();
-            //Select all columns for a given StaffID as well as their password hash
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster] where StudentID = " + StudentID, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            Roster.Initialize();
-            int i = 0;
-            while (rdr.NextResult()) {
-                Roster[i, 0] = rdr[0].ToString();
-                Roster[i, 1] = rdr[1].ToString();
-                i++;
-            } if (rdr != null) {
-                rdr.Close();
             }
-            conn.Close();
+            //>>>>>>> Updated Staff Class
 
+            public ClassRoster(int StudentID) {
+                //Connect to SQL Server
+                SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+                conn.Open();
+                //Select all columns for a given StaffID as well as their password hash
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster] where StudentID = " + StudentID, conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                Roster.Initialize();
+                int i = 0;
+                while (rdr.NextResult()) {
+                    Roster[i, 0] = rdr[0].ToString();
+                    Roster[i, 1] = rdr[1].ToString();
+                    i++;
+                } if (rdr != null) {
+                    rdr.Close();
+                }
+                conn.Close();
+
+            }
         }
     }
-
 }
