@@ -202,48 +202,6 @@ namespace Data {
         }
         //=======
 
-        public class ClassRoster {
-            public string[,] Roster { get; set; }
-
-            public ClassRoster() {
-                //Connect to SQL Server
-                SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-                conn.Open();
-                //Select all columns for a given StaffID as well as their password hash
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster]", conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                Roster.Initialize();
-                int i = 0;
-                while (rdr.NextResult()) {
-                    Roster[i, 0] = rdr[0].ToString();
-                    Roster[i, 1] = rdr[1].ToString();
-                    i++;
-                } if (rdr != null) {
-                    rdr.Close();
-                }
-                conn.Close();
-
-            }
-
-            public ClassRoster(int StudentID) {
-                //Connect to SQL Server
-                SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-                conn.Open();
-                //Select all columns for a given StaffID as well as their password hash
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster] where StudentID = " + StudentID, conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                Roster.Initialize();
-                int i = 0;
-                while (rdr.NextResult()) {
-                    Roster[i, 0] = rdr[0].ToString();
-                    Roster[i, 1] = rdr[1].ToString();
-                    i++;
-                } if (rdr != null) {
-                    rdr.Close();
-                }
-                conn.Close();
-
-            }
             //>>>>>>> Updated Staff Class
 
             public ClassRoster(int StudentID) {
@@ -267,4 +225,3 @@ namespace Data {
             }
         }
     }
-}
