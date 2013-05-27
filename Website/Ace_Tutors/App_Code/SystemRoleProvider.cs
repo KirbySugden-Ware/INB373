@@ -9,14 +9,12 @@ using Data;
 /// <summary>
 /// Summary description for SystemRoleProvider
 /// </summary>
-public class SystemRoleProvider : RoleProvider
-{
-	public SystemRoleProvider()
-	{
-		//
-		// TODO: Add constructor logic here
-		//
-	}
+public class SystemRoleProvider : RoleProvider {
+    public SystemRoleProvider() {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
 
     public override void AddUsersToRoles(string[] usernames, string[] roleNames) {
         throw new NotImplementedException();
@@ -48,10 +46,19 @@ public class SystemRoleProvider : RoleProvider
     }
 
     public override string[] GetRolesForUser(string username) {
-        //code to get role of user
-        
-        //return user role
-        return new string[] { username };
+        string role;
+        try {
+            Staff user = StaffList.getAStaff(int.Parse(username));
+            role = user.Role;
+        } catch (Exception exc) {
+            Student user = Students.getAStudent(int.Parse(username));
+            if (user.GivenName != null) {
+                role = "Student";
+            } else {
+                role = "";
+            }
+        }
+        return new string[] { role };
     }
 
     public override string[] GetUsersInRole(string roleName) {

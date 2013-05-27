@@ -8,10 +8,8 @@ using Business;
 using Data;
 using System.Security.Cryptography;
 
-public partial class AccessGeneral_Login : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
+public partial class AccessGeneral_Login : System.Web.UI.Page {
+    protected void Page_Load(object sender, EventArgs e) {
         if ((this.User.IsInRole("Student")) || (this.User.IsInRole("Tutor")) || (this.User.IsInRole("Admin"))) {
             LoginPanel.Visible = false;
         } else {
@@ -21,20 +19,24 @@ public partial class AccessGeneral_Login : System.Web.UI.Page
     protected void LoginPanel_Authenticate(object sender, AuthenticateEventArgs e) {
         //code to authenticate user
         int userId = 0;
+        System.Text.ASCIIEncoding encoder = new System.Text.ASCIIEncoding();
+        byte[] buffer = encoder.GetBytes(LoginPanel.Password);
+        SHA1 passwordSHA = new SHA1CryptoServiceProvider();
+        string hash = BitConverter.ToString(passwordSHA.ComputeHash(buffer)).Replace("-", "");
         try {
 
-            System.Text.ASCIIEncoding encoder = new System.Text.ASCIIEncoding();
-            byte[] buffer = encoder.GetBytes(LoginPanel.Password);
             userId = int.Parse(LoginPanel.UserName);
-            Student loggedinS = Students.getAStudent(userId);
+            Student loggedin = Students.getAStudent(userId);
+
+            if ((hash == loggedin.PassHash.ToUpper())) {
+                e.Authenticated = true;
+            }
+        } catch (NullReferenceException exc) {
             Staff loggedin = StaffList.getAStaff(userId);
-            SHA1 passwordSHA = new SHA1CryptoServiceProvider();
-            string hash = BitConverter.ToString(passwordSHA.ComputeHash(buffer)).Replace("-", "");
-            if ((hash == loggedinS.PassHash.ToUpper()) || (hash == loggedin.PassHash.ToUpper())) {
+            if (hash == loggedin.PassHash.ToUpper()) {
                 e.Authenticated = true;
             }
         } catch (Exception exc) {
-            //if()
             e.Authenticated = false;
         }
     }

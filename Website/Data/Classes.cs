@@ -20,7 +20,7 @@ namespace Data {
 //<<<<<<< HEAD
         public void StudentSearch(int StudentID) {
             //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
             conn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * from student where StudentID = " + StudentID, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -43,7 +43,7 @@ namespace Data {
         
         public Student(int StudentID){
         //Connect to SQL Server
-        SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+        SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
         conn.Open();
         //Select all columns for a given StudentID as well as their password hash
         SqlCommand cmd = new SqlCommand("SELECT dbo.Students.GivenName, dbo.Students.Surname, dbo.Students.Address, dbo.Students.Email, dbo.Students.PhoneNumber1, dbo.Students.PhoneNumber2, dbo.Accounts.PassHash FROM dbo.Students INNER JOIN dbo.Accounts ON dbo.Students.StudentID = dbo.Accounts.AccID where (dbo.Accounts.AccID = " + StudentID + ")" , conn);
@@ -93,7 +93,7 @@ namespace Data {
         
         public Staff(int StaffID){
         //Connect to SQL Server
-        SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+        SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
         conn.Open();
         //Select all columns for a given StaffID as well as their password hash
         SqlCommand cmd = new SqlCommand("SELECT dbo.Staff.GivenName, dbo.Staff.Surname, dbo.Staff.Email, dbo.Staff.PhoneNumber1, dbo.Staff.PhoneNumber2, dbo.Staff.Role, dbo.Accounts.PassHash FROM dbo.Staff INNER JOIN dbo.Accounts ON dbo.Staff.StaffID = dbo.Accounts.AccID WHERE (StaffID = " + StaffID + ")" , conn);
@@ -138,7 +138,7 @@ namespace Data {
         public Class(int ClassID)
         {
             //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
             //Select all columns for a given StaffID as well as their password hash
             SqlCommand cmd = new SqlCommand("SELECT ClassCode, Day, Time, Semester, TutorID FROM dbo.ClassList where ClassID = " + ClassID + ")", conn);
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -159,6 +159,50 @@ namespace Data {
             conn.Close();
         }
 
+    }
+
+    public class ClassRoster {
+        public string[,] Roster { get; set; }
+
+        public ClassRoster() {
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            conn.Open();
+            //Select all columns for a given StaffID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster]", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            Roster.Initialize();
+            int i = 0;
+            while (rdr.NextResult()) {
+                Roster[i, 0] = rdr[0].ToString();
+                Roster[i, 1] = rdr[1].ToString();
+                i++;
+            } if (rdr != null) {
+                rdr.Close();
+            }
+            conn.Close();
+
+        }
+
+        public ClassRoster(int StudentID) {
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            conn.Open();
+            //Select all columns for a given StaffID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [WebDevelopmentDB].[dbo].[ClassRoster] where StudentID = " + StudentID, conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            Roster.Initialize();
+            int i = 0;
+            while (rdr.NextResult()) {
+                Roster[i, 0] = rdr[0].ToString();
+                Roster[i, 1] = rdr[1].ToString();
+                i++;
+            } if (rdr != null) {
+                rdr.Close();
+            }
+            conn.Close();
+
+        }
     }
 
 }

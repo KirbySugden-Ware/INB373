@@ -26,7 +26,7 @@ namespace DataAccess.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PANDORASBOX\\PANDORASBOX;Initial Catalog=WebDevelopmentDB;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=WebDevelopmentDB;Integrated Security=True")]
         public string WebDevelopmentDBConnectionString {
             get {
                 return ((string)(this["WebDevelopmentDBConnectionString"]));

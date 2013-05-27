@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassList.cs" />
-    <Compile Include="ClassRoster.cs" />
+    <Compile Include="ClassRosters.cs" />
     <Compile Include="StaffList.cs" />
     <Compile Include="Students.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

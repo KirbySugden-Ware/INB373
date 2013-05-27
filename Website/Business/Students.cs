@@ -14,7 +14,7 @@ namespace Business {
             List<Student> StudentsList = new List<Student>();
 
             //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
             conn.Open();
             //Select all columns for a given StudentID as well as their password hash
             SqlCommand cmd = new SqlCommand("SELECT dbo.Students.GivenName, dbo.Students.Surname, dbo.Students.Address, dbo.Students.Email, dbo.Students.PhoneNumber1, dbo.Students.PhoneNumber2, dbo.Accounts.PassHash FROM dbo.Students INNER JOIN dbo.Accounts ON dbo.Students.StudentID = dbo.Accounts.AccID", conn);
