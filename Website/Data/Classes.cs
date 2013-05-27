@@ -18,17 +18,7 @@ namespace Data {
         public string PassHash { get; set; }
 
         //<<<<<<< HEAD
-        public void StudentSearch(int StudentID) {
-            //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * from student where StudentID = " + StudentID, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read()) {
-
-            }
-        }
-
+           
         //=======
         public Student() {
             GivenName = "";

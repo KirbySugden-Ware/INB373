@@ -12,30 +12,9 @@ namespace Business {
         [System.ComponentModel.DataObjectMethod(System.ComponentModel.DataObjectMethodType.Select)]
         public static List<Student> getAllStudents() {
             List<Student> StudentsList = new List<Student>();
+            List<string> tmp = new List<string>();
+            
 
-            //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
-            conn.Open();
-            //Select all columns for a given StudentID as well as their password hash
-            SqlCommand cmd = new SqlCommand("SELECT dbo.Students.GivenName, dbo.Students.Surname, dbo.Students.Address, dbo.Students.Email, dbo.Students.PhoneNumber1, dbo.Students.PhoneNumber2, dbo.Accounts.PassHash FROM dbo.Students INNER JOIN dbo.Accounts ON dbo.Students.StudentID = dbo.Accounts.AccID", conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read()) {
-                //Fill out class variables with returned data...
-                StudentsList.Add(new Student{
-                    GivenName = rdr[0].ToString(),
-                    Surname = rdr[1].ToString(),
-                    Address = rdr[2].ToString(),
-                    Email = rdr[3].ToString(),
-                    Phone1 = rdr[4].ToString(),
-                    Phone2 = rdr[5].ToString(),
-                    PassHash = rdr[6].ToString()});
-            }
-            //Close the reader and the SQL connection
-            if (rdr != null) {
-                rdr.Close();
-            }
-            conn.Close();
-            return StudentsList;
         }
 
         public static Student getAStudent(int idNumber) {
