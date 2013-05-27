@@ -54,8 +54,11 @@ namespace Business {
             System.Diagnostics.Trace.WriteLine(staff, "Update");
         }
 
+<<<<<<< HEAD
         public static Staff getAStaff(int userId) {
             return new Staff(userId);
         }
+=======
+>>>>>>> Updated Staff Class
     }
 }
