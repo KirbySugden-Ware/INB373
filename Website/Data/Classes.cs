@@ -17,7 +17,6 @@ namespace Data {
         public string Phone2 { get; set; }
         public string PassHash { get; set; }
 
-<<<<<<< HEAD
         public void StudentSearch(int StudentID) {
             //Connect to SQL Server
             SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
@@ -27,7 +26,6 @@ namespace Data {
 
             }
 
-=======
         public Student()
         {
             GivenName = "";
@@ -62,7 +60,6 @@ namespace Data {
                 rdr.Close();
             }
         conn.Close();
->>>>>>> Added Constructors for Data Classes
         }
     }
 
@@ -154,6 +151,46 @@ namespace Data {
                 rdr.Close();
             }
             conn.Close();
+        }
+
+        public class ClassRoster{
+                public string[] Roster { get; set; }
+
+            public ClassRoster()
+            {
+                Roster.Initialize();
+                //Connect to SQL Server
+                SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+                //Select all columns for a given StaffID as well as their password hash
+                SqlCommand cmd = new SqlCommand("SELECT ClassCode, Day, Time, Semester, TutorID FROM dbo.ClassList where ClassID = " + ClassID + ")", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                int i = 0;
+                while (rdr.Read()){
+                    Roster[i] = rdr[i].ToString();
+                    i++;
+                }
+
+    
+            }
+
+            public ClassRoster(int StudentID){
+            //Connect to SQL Server
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
+            //Select all columns for a given StaffID as well as their password hash
+            SqlCommand cmd = new SqlCommand("SELECT ClassCode, Day, Time, Semester, TutorID FROM dbo.ClassList where ClassID = " + ClassID + ")", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            int i = 0;
+            while (rdr.Read()){
+                Roster[i] = rdr[i].ToString();
+                i++;
+            }
+                 //Close the reader and the SQL connection
+            if (rdr != null)
+            {
+                rdr.Close();
+            }
+            conn.Close();
+            }
         }
 
     }
