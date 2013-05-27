@@ -13,7 +13,7 @@ namespace Business {
         public static List<Staff> getAllStaff() {
             List<Staff> StaffsList = new List<Staff>();
             //Connect to SQL Server
-            SqlConnection conn = new SqlConnection("Data Source=PANDORASBOX\\PANDORASBOX; Database=WebDevelopmentDB; Integrated Security=SSPI");
+            SqlConnection conn = new SqlConnection("Data Source=(local); Database=WebDevelopmentDB; Integrated Security=SSPI");
             //Select all columns for a given StaffID as well as their password hash
             SqlCommand cmd = new SqlCommand("SELECT dbo.Staff.GivenName, dbo.Staff.Surname, dbo.Staff.Email, dbo.Staff.PhoneNumber1, dbo.Staff.PhoneNumber2, dbo.Staff.Role, dbo.Accounts.PassHash FROM dbo.Staff INNER JOIN dbo.Accounts ON dbo.Staff.StaffID = dbo.Accounts.AccID)", conn);
             SqlDataReader rdr = cmd.ExecuteReader();
@@ -54,8 +54,11 @@ namespace Business {
             System.Diagnostics.Trace.WriteLine(staff, "Update");
         }
 
+<<<<<<< HEAD
         public static Staff getAStaff(int userId) {
             return new Staff(userId);
         }
+=======
+>>>>>>> Updated Staff Class
     }
 }
