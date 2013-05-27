@@ -7,5 +7,7 @@
     </asp:FormView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Business.ClassRoster" DeleteMethod="deleteClassRoster" InsertMethod="insertClassRoster" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRosters" TypeName="Business.ClassRoster"></asp:ObjectDataSource>
     
+    no code to start this yet
+    
 </asp:Content>
 

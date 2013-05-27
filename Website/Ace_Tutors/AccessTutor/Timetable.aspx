@@ -2,30 +2,17 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     
-    <asp:DataList ID="DataList1" runat="server" DataKeyField="ClassID" DataSourceID="ObjectDataSource1">
-        <ItemTemplate>
-            ClassID:
-            <asp:Label ID="ClassIDLabel" runat="server" Text='<%# Eval("ClassID") %>' />
-            <br />
-            ClassCode:
-            <asp:Label ID="ClassCodeLabel" runat="server" Text='<%# Eval("ClassCode") %>' />
-            <br />
-            Day:
-            <asp:Label ID="DayLabel" runat="server" Text='<%# Eval("Day") %>' />
-            <br />
-            Time:
-            <asp:Label ID="TimeLabel" runat="server" Text='<%# Eval("Time") %>' />
-            <br />
-            Semester:
-            <asp:Label ID="SemesterLabel" runat="server" Text='<%# Eval("Semester") %>' />
-            <br />
-            TutorID:
-            <asp:Label ID="TutorIDLabel" runat="server" Text='<%# Eval("TutorID") %>' />
-            <br />
-<br />
-        </ItemTemplate>
-    </asp:DataList>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ClassID" DataSourceID="ObjectDataSource1">
+        <Columns>
+            <asp:BoundField DataField="ClassID" HeaderText="ClassID" ReadOnly="True" SortExpression="ClassID" />
+            <asp:BoundField DataField="ClassCode" HeaderText="ClassCode" SortExpression="ClassCode" />
+            <asp:BoundField DataField="Day" HeaderText="Day" SortExpression="Day" />
+            <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
+            <asp:BoundField DataField="Semester" HeaderText="Semester" SortExpression="Semester" />
+            <asp:BoundField DataField="TutorID" HeaderText="TutorID" SortExpression="TutorID" />
+        </Columns>
+    </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClasses" TypeName="Business.ClassList"></asp:ObjectDataSource>
     
-</asp:Content>
+    </asp:Content>
 

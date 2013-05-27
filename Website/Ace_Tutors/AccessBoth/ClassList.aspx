@@ -5,9 +5,10 @@
         <RoleGroups>
             <asp:RoleGroup Roles="Tutor">
                 <ContentTemplate>
-                    This will be altered to allow student details to be shown for each class a tutor teaches<asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
-                    </asp:DataList>
-                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRosters" TypeName="Business.ClassRoster"></asp:ObjectDataSource>
+                    This will be altered to allow student details to be shown for each class a tutor teaches<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRoster" TypeName="Business.ClassRosters"></asp:ObjectDataSource>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+                    </asp:GridView>
+                    this doesn&#39;t work yet
                 </ContentTemplate>
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Student">

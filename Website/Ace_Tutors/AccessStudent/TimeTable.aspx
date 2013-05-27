@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="TimeTable.aspx.cs" Inherits="AccessStudent_TimeTable" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClasses" TypeName="Business.ClassList"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getClasses" TypeName="Business.ClassList">
+        <SelectParameters>
+            <asp:SessionParameter Name="username" SessionField="UserName" Type="String" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
     <asp:DataList ID="DataList1" runat="server" DataSourceID="ObjectDataSource1">
         <ItemTemplate>
             ClassID:
@@ -25,6 +29,5 @@
 <br />
         </ItemTemplate>
     </asp:DataList>
-    this does not work yet
-</asp:Content>
+    </asp:Content>
 

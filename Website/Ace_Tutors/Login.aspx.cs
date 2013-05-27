@@ -36,6 +36,7 @@ public partial class AccessGeneral_Login : System.Web.UI.Page {
             if (hash == loggedin.PassHash.ToUpper()) {
                 e.Authenticated = true;
             }
+            Session.Add("UserName", userId);
         } catch (Exception exc) {
             e.Authenticated = false;
         }

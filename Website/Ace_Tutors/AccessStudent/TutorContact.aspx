@@ -29,6 +29,6 @@
             </ItemTemplate>
         </asp:DataList>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllStaff" TypeName="Business.StaffList"></asp:ObjectDataSource>
-    </p>
+        partially working</p>
 </asp:Content>
 
