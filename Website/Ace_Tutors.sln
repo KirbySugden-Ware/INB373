@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors", "http://localhost:16169", "{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Ace_Tutors(1)", "http://localhost:16169", "{34EB41BA-4FB5-48F0-B77C-6A5E782A2582}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{cf7188a1-634a-4f5c-97fb-baa0f7ab9bae}|Business.dll;{F29023BA-89D2-4F5B-A95A-C2742EC21185}|Data.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_16169"
 		Debug.AspNetCompiler.PhysicalPath = "Ace_Tutors\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_16169\"
@@ -27,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F29023BA-89D2-4F5B-A95A-C2742EC21185}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{58D1962D-E13B-4056-A0C9-408A3782A2C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +48,10 @@ Global
 		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F29023BA-89D2-4F5B-A95A-C2742EC21185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D1962D-E13B-4056-A0C9-408A3782A2C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D1962D-E13B-4056-A0C9-408A3782A2C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D1962D-E13B-4056-A0C9-408A3782A2C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D1962D-E13B-4056-A0C9-408A3782A2C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
