@@ -3,7 +3,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <p>Inquiries: 7568 4228<br />
         E-mail:  ATS@fakemail.com.au
-        etc
     </p>
 </asp:Content>
 

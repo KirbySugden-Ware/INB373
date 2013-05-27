@@ -32,12 +32,14 @@ public partial class AccessGeneral_Login : System.Web.UI.Page {
                 e.Authenticated = true;
             }
         } catch (NullReferenceException exc) {
+            System.Diagnostics.Trace.WriteLine(exc);
             Staff loggedin = StaffList.getAStaff(userId);
             if (hash == loggedin.PassHash.ToUpper()) {
                 e.Authenticated = true;
             }
             Session.Add("UserName", userId);
         } catch (Exception exc) {
+            System.Diagnostics.Trace.WriteLine(exc);
             e.Authenticated = false;
         }
     }

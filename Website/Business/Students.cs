@@ -13,8 +13,8 @@ namespace Business {
         public static List<Student> getAllStudents() {
             List<Student> StudentsList = new List<Student>();
             List<string> tmp = new List<string>();
-            
 
+            return StudentsList;
         }
 
         public static Student getAStudent(int idNumber) {

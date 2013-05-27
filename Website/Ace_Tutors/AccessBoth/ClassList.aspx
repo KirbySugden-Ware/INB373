@@ -5,17 +5,22 @@
         <RoleGroups>
             <asp:RoleGroup Roles="Tutor">
                 <ContentTemplate>
-                    This will be altered to allow student details to be shown for each class a tutor teaches<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRoster" TypeName="Business.ClassRosters"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRoster" TypeName="Business.ClassRosters"></asp:ObjectDataSource>
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
                     </asp:GridView>
-                    this doesn&#39;t work yet
                 </ContentTemplate>
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Student">
                 <ContentTemplate>
                     <asp:DataList ID="DataList2" runat="server" DataSourceID="ObjectDataSource2">
+                        <ItemTemplate>
+                            Roster:
+                            <asp:Label ID="RosterLabel" runat="server" Text='<%# Eval("Roster") %>' />
+                            <br />
+                            <br />
+                        </ItemTemplate>
                     </asp:DataList>
-                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRosters" TypeName="Business.ClassRoster"></asp:ObjectDataSource>
+                    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="getAllClassRoster" TypeName="Business.ClassRosters"></asp:ObjectDataSource>
                 </ContentTemplate>
             </asp:RoleGroup>
         </RoleGroups>
